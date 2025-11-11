@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="hero-section">
+    <div class="hero-content">
+        <div class="hero-badge">
+            <i class="fas fa-star"></i>
+            <span>AI-Powered CV Optimization</span>
+        </div>
+        <h1 class="hero-title">
+            Transform Your CV
+            <br><span class="gradient-text">Land Your Dream Job</span>
+        </h1>
+        <p class="hero-description">
+            Our advanced AI analyzes your CV and optimizes it for current job opportunities. 
+            Intelligent matching, contextual rewriting, and automatic enhancement—all in seconds.
+        </p>
+        <div class="hero-stats">
+            <div class="stat-item">
+                <div class="stat-value">80%</div>
+                <div class="stat-label">Job Match Score</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value"> 3x</div>
+                <div class="stat-label">More Interviews</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">5min</div>
+                <div class="stat-label">Processing Time</div>
+            </div>
+        </div>
+        <a href="{{ url_for('upload_page') }}" class="cta-button">
+            <span>Get Started Now</span>
+            <i class="fas fa-arrow-right"></i>
+        </a>
+
+    </div>
+    <div class="hero-visual">
+        <div class="floating-card card-1">
+            <i class="fas fa-file-alt"></i>
+            <span>Original CV</span>
+        </div>
+        <div class="floating-card card-2">
+            <i class="fas fa-magic"></i>
+            <span>AI Enhancement</span>
+        </div>
+        <div class="floating-card card-3">
+            <i class="fas fa-trophy"></i>
+            <span>Optimized Result</span>
+        </div>
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+    </div>
+</div>
+
+<div class="features-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-badge">How It Works</span>
+            <h2 class="section-title">Four Simple Steps to Success</h2>
+            <p class="section-subtitle">Transform your CV in minutes with our AI-powered platform</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-number">01</div>
+                <div class="feature-icon">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                </div>
+                <h3>Upload Your CV</h3>
+                <p>Simply upload your CV in PDF format. Our system automatically extracts all relevant information with precision.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-number">02</div>
+                <div class="feature-icon">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+                <h3>AI Analysis</h3>
+                <p>Advanced AI searches for relevant job opportunities and performs contextual analysis using Groq Llama 3.3 70B.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-number">03</div>
+                <div class="feature-icon">
+                    <i class="fas fa-wand-magic-sparkles"></i>
+                </div>
+                <h3>Smart Enhancement</h3>
+                <p>Your CV is optimized with recruiter-friendly vocabulary and in-demand skills tailored to your target roles.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-number">04</div>
+                <div class="feature-icon">
+                    <i class="fas fa-download"></i>
+                </div>
+                <h3>Download & Apply</h3>
+                <p>Receive your enhanced CV in LaTeX and PDF formats, ready to impress recruiters and land interviews.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="cta-section">
+    <div class="container">
+        <div class="cta-content">
+            <h2>Ready to Boost Your Career?</h2>
+            <p>Join thousands of professionals who have enhanced their CVs with Job Mate</p>
+            <a href="{{ url_for('upload_page') }}" class="cta-button secondary">
+                <span>Start Optimizing Now</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

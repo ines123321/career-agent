@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="upload-container">
+    <div class="upload-card">
+        <div class="upload-header">
+            <h1><i class="fas fa-rocket"></i> Enhance Your CV</h1>
+            <p>Upload your PDF CV to start the AI-powered optimization process</p>
+        </div>
+
+        <form id="uploadForm" enctype="multipart/form-data">
+            <div class="upload-area" id="uploadArea">
+                <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                <h3>Drag & Drop Your PDF File</h3>
+                <p>or</p>
+                <input type="file" id="cvFile" name="cv_file" accept=".pdf" hidden>
+                <button type="button" class="browse-button" onclick="document.getElementById('cvFile').click()">
+                    Browse Files
+                </button>
+                <p class="file-info">Maximum file size: 16MB</p>
+            </div>
+            <div class="selected-file" id="selectedFile" style="display: none;">
+                <i class="fas fa-file-pdf"></i>
+                <span id="fileName"></span>
+                <button type="button" class="remove-file" onclick="removeFile()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <button type="submit" class="submit-button" id="submitButton" disabled>
+                <i class="fas fa-magic"></i>
+                Start AI Optimization
+            </button>
+        </form>
+
+        <div class="processing-section" id="processingSection" style="display: none;">
+            <div class="processing-header">
+                <h3><i class="fas fa-cog fa-spin"></i> Processing Your CV...</h3>
+                <p>Our AI is analyzing and enhancing your resume</p>
+            </div>
+            <div class="progress-steps">
+                <div class="step active">
+                    <div class="step-number">1</div>
+                    <div class="step-text">Extracting</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-text">Searching</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-text">Matching</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-text">Enhancing</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <div class="step-text">Generating</div>
+                </div>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="logs-container">
+                <h4><i class="fas fa-terminal"></i> Processing Log:</h4>
+                <div class="logs" id="processingLogs"></div>
+            </div>
+        </div>
+
+        <div class="result-section" id="resultSection" style="display: none;">
+            <!-- Results will be displayed here by JavaScript -->
+        </div>
+    </div>
+</div>
+{% endblock %}

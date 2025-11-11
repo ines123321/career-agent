@@ -1,0 +1,14 @@
+# .gitignore
+.env
+.env*
+*.env
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.dll
+uploads/
+temp/
+*.log
