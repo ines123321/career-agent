@@ -1,92 +1,96 @@
+# Career Agent - Intelligent Resume Optimization
 
-# Career Agent - Optimisation Intelligente de CV
+## Description
 
-##  Description
+**Career Agent** is a web application that uses AI to automatically analyze and optimize your resume based on relevant job offers. The system combines LLM, scraping, and document generation to create personalized resumes.
 
-**Career Agent** est une application web qui utilise l'IA pour analyser et optimiser automatiquement votre CV en fonction d'offres d'emploi pertinentes. Le système combine LLM, scraping et génération de documents pour créer des CV personnalisés.
+## Key Features
 
-##  Fonctionnalités Clés
+- **Resume Analysis**: Automatic extraction from PDF with Groq (Llama 3.3 70B)
+- **Intelligent Matching**: LinkedIn job search + advanced contextual scoring
+- **Ethical Enhancement**: Contextual reformulation with RAG validation
+- **PDF Generation**: Automatic creation of professional resumes in LaTeX
 
-- ** Analyse de CV** : Extraction automatique depuis PDF avec Groq (Llama 3.3 70B)
-- ** Matching Intelligent** : Recherche d'offres LinkedIn + scoring contextuel avancé
-- ** Enhancement Éthique** : Reformulation contextuelle avec validation RAG
-- ** Génération PDF** : Création automatique de CV professionnels en LaTeX
-
-##  Architecture
+## Architecture
 
 ```python
-PDF → Extraction → Analyse → Matching → Enhancement → LaTeX → PDF
+PDF → Extraction → Analysis → Matching → Enhancement → LaTeX → PDF
 ```
 
-### Composants Principaux
-- **PDFCVParser** : Extraction et parsing des CV
-- **JobScraper** : Scraping d'offres LinkedIn (Apify)
-- **JobMatcher** : Matching contextuel avec Groq
-- **CVEnhancer** : Optimisation éthique avec RAG
-- **LaTeXGenerator** : Génération de CV professionnels
+### Main Components
 
-##  Installation Rapide
+- **PDFCVParser**: Resume extraction and parsing
+- **JobScraper**: LinkedIn job scraping (Apify)
+- **JobMatcher**: Contextual matching with Groq
+- **CVEnhancer**: Ethical optimization with RAG
+- **LaTeXGenerator**: Professional resume generation
+
+## Quick Installation
 
 ```bash
-# 1. Cloner le projet
+# 1. Clone the project
 git clone https://github.com/ines123321/career-agent.git
 cd career-agent
 
-# 2. Environnement virtuel
+# 2. Virtual environment
 python -m venv venv
 venv\Scripts\activate  # Windows
 # source venv/bin/activate  # Linux/Mac
 
-# 3. Dépendances
+# 3. Dependencies
 pip install -r requirements.txt
 
 # 4. Configuration
 cp .env.example .env
-# Éditer .env avec vos clés API
+# Edit .env with your API keys
 ```
 
-##  Configuration
+## Configuration
 
-Fichier `.env` requis :
+Required `.env` file:
+
 ```env
 GROQ_API_KEY=your_groq_key
 APIFY_API_KEY=your_apify_key
 FLASK_SECRET_KEY=your_secret_key
 ```
 
-**Prérequis** : Python 3.8+, pdflatex, 4GB+ RAM
+**Prerequisites**: Python 3.8+, pdflatex, 4GB+ RAM
 
-##  Utilisation
+## Usage
 
 ```bash
 python app.py
 ```
-Ouvrir `http://localhost:5000`
+
+Open `http://localhost:5000`
 
 ### Workflow
-1.  Uploader un CV PDF
-2.  Analyse automatique
-3.  Recherche d'offres pertinentes
-4.  Matching intelligent
-5.  Optimisation contextuelle
-6.  Génération du CV optimisé
 
-##  API Principale
+1.  Upload a PDF resume
+2.  Automatic analysis
+3.  Search for relevant job offers
+4.  Intelligent matching
+5.  Contextual optimization
+6.  Generate optimized resume
 
-- `POST /api/process-cv` : Traitement complet
-- `GET /api/download/<file>` : Téléchargement
-- `POST /api/regenerate-enhancement` : Régénération
+## Main API
 
-##  Technologies
+- `POST /api/process-cv`: Complete processing
+- `GET /api/download/<file>`: Download
+- `POST /api/regenerate-enhancement`: Regeneration
 
-- **Backend** : Flask, Groq API, Apify
-- **AI** : Llama 3.3 70B, Sentence Transformers, RAG
-- **Document** : LaTeX, PyPDF2, pdfplumber
-- **Orchestration** : LangGraph
+## Technologies
 
-##  Dépannage
+- **Backend**: Flask, Groq API, Apify
+- **AI**: Llama 3.3 70B, Sentence Transformers, RAG
+- **Document**: LaTeX, PyPDF2, pdfplumber
+- **Orchestration**: LangGraph
 
-**Erreur LaTeX** : Vérifier l'installation de pdflatex
-**Scraping échoué** : Vérifier la clé Apify et les quotas
-**Enhancement échoué** : Vérifier la clé Groq et la structure du CV
+## Troubleshooting
 
+**LaTeX Error**: Check pdflatex installation
+
+**Scraping Failed**: Check Apify key and quotas
+
+**Enhancement Failed**: Check Groq key and resume structure
